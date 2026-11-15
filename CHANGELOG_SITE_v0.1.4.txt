@@ -1,0 +1,8 @@
+GODOTBRIDGE GITHUB PAGES — v0.1.4
+
+- Updated all site download links to GodotBridge_v0.1.4.zip.
+- Added the supplied GodotBridge mascot/bridge imagery and blue visual theme.
+- Added the supplied responsive stylesheet and mobile navigation script.
+- Added the supplied 64x64 favicon.png to the site root and referenced it from index.html.
+- Reworked the page content to describe the actual v0.1.4 converter and its current limitations.
+- Kept download links relative for GitHub Pages project-site deployments.

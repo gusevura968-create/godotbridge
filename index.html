@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1767ee">
+  <meta name="description" content="GodotBridge — инструмент для переноса поддерживаемых сцен и ресурсов Godot в Roblox. Конвертер, отчёты и пошаговая документация.">
+  <title>GodotBridge — Godot → Roblox Converter</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-shell" id="top">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="GodotBridge — на главную">
+      <img class="brand-mark" src="assets/godotbridge-icon.png" alt="">
+      <span>GODOT<span class="brand-accent">BRIDGE</span></span>
+    </a>
+
+    <nav class="nav-links" id="site-navigation" aria-label="Основная навигация">
+      <a href="#features">Возможности</a>
+      <a href="#workflow">Как работает</a>
+      <a href="#requirements">Требования</a>
+      <a href="#download">Скачать</a>
+    </nav>
+
+    <a class="top-download" href="downloads/GodotBridge_v0.1.4.zip" download>
+      Скачать v0.1.4 <span class="download-arrow">↓</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><i></i> GODOT → ROBLOX <span>VERSION 0.1.4</span></div>
+        <h1>From Godot<br>to <b>Roblox.</b></h1>
+        <p class="hero-lead">GodotBridge анализирует Godot-проекты и создаёт основу Roblox-проекта: сцены RBXMX, ресурсы, Luau-черновики и отчёт о конвертации. Перенос выполняется постепенно — с понятными ограничениями и ручными этапами.</p>
+        <div class="hero-actions">
+          <a class="button button-white" href="downloads/GodotBridge_v0.1.4.zip" download>
+            <span class="button-icon">↓</span>
+            <span><strong>Скачать GodotBridge</strong><small>Полный ZIP • v0.1.4</small></span>
+          </a>
+          <a class="secondary-link" href="#features">Изучить возможности <span>→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span class="windows-icon">⊞</span><span>Windows 10 / 11</span><i></i>
+          <span>Python 3.10+</span><i></i><span>Roblox Studio</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Маскот GodotBridge сидит на мосту">
+        <div class="art-halo"></div>
+        <div class="art-orbit orbit-a"></div>
+        <div class="art-orbit orbit-b"></div>
+        <span class="art-spark spark-one">✦</span>
+        <span class="art-spark spark-two">✧</span>
+        <img class="hero-bridge" src="assets/mascot-bridge.png" alt="Синий маскот GODOT сидит на белом мосту">
+        <div class="art-caption"><b>✦</b> BRIDGE YOUR WORLDS <b>✦</b></div>
+      </div>
+      <div class="hero-bottom"><span>GODOTBRIDGE / CONVERTER</span><span>BUILD 0.1.4</span></div>
+    </section>
+
+    <section class="download-panel" id="download">
+      <div class="download-emblem">↓</div>
+      <div class="download-info">
+        <div class="section-kicker">LATEST PUBLIC BUILD</div>
+        <h2>GodotBridge <small>v0.1.4</small></h2>
+        <p>Архив включает программу, исходники, примеры, тесты и русскую пошаговую инструкцию.</p>
+      </div>
+      <a class="button button-blue" href="downloads/GodotBridge_v0.1.4.zip" download>Скачать .ZIP <span class="button-icon">↓</span></a>
+      <div class="download-size"><b>PLATFORM</b><span>Windows</span></div>
+    </section>
+
+    <section class="features section-wrap" id="features">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">01 / FEATURES</div>
+          <h2>Инструменты для<br><b>переноса проекта.</b></h2>
+        </div>
+        <p>GodotBridge не обещает автоматически превратить любую игру в готовую Roblox-копию. Он структурирует переносимые данные, создаёт заготовки и показывает, что нужно адаптировать вручную.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card feature-large">
+          <div class="feature-label">01 — SCENE CONVERSION</div>
+          <h3>Сцены Godot → RBXMX</h3>
+          <p>Читает текстовые .tscn-сцены, сохраняет приблизительную иерархию и создаёт XML-модели для дальнейшей проверки в Roblox Studio.</p>
+          <div class="scene-visual" aria-hidden="true">
+            <div class="scene-window">
+              <div class="window-bar"><i></i><i></i><i></i><span>GODOT SCENE</span></div>
+              <div class="scene-tree"><b>⌄ Main</b><span>　◇ World</span><span>　◇ Player</span><span>　◇ Camera</span><span>　◇ HUD</span></div>
+              <div class="scene-preview"><div class="scene-sun"></div><div class="scene-ground"></div><div class="scene-cube"></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-label">02 — ASSETS</div>
+          <h3>Сбор ресурсов</h3>
+          <p>Текстуры, аудио и модели копируются в отдельные папки результата. В отчёте видно, какие файлы потребуют ручной загрузки в Roblox.</p>
+          <div class="asset-stack" aria-hidden="true">
+            <div class="asset-file"><b>PNG</b><span>Textures / sprite.png</span><i>✓</i></div>
+            <div class="asset-file offset"><b>WAV</b><span>Audio / ambience.wav</span><i>✓</i></div>
+            <div class="asset-file"><b>OBJ</b><span>Models / prop.obj</span><i>✓</i></div>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-label">03 — 2D / UI</div>
+          <h3>Основы 2D-интерфейсов</h3>
+          <p>Поддерживаемые CanvasLayer и корневые Node2D преобразуются в ScreenGui. Базовые элементы интерфейса получают Roblox GUI-представления.</p>
+          <div class="code-visual" aria-hidden="true">
+            <div class="code-top"><span>GODOT UI</span><span>→ ROBLOX GUI</span></div>
+            <div class="code-lines"><i class="w70"></i><i class="w40"></i><i class="w85"></i><i class="w55"></i><i class="w66"></i></div>
+            <div class="code-tag">ScreenGui / Frame / TextLabel</div>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-label">04 — SCRIPT DRAFTS</div>
+          <h3>Черновики Luau</h3>
+          <p>Поддерживаемая часть синтаксиса GDScript переводится в Luau-заготовки. Неподдерживаемые вызовы отмечаются для ручной адаптации.</p>
+          <div class="code-visual" aria-hidden="true">
+            <div class="code-top"><span>PLAYER.GD</span><span>LUAU DRAFT</span></div>
+            <div class="code-lines"><i class="w48"></i><i class="w70"></i><i class="w55"></i><i class="w85"></i><i class="w40"></i></div>
+            <div class="code-tag">REVIEW REQUIRED</div>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-label">05 — REPORTS</div>
+          <h3>Отчёт и диагностика</h3>
+          <p>Отдельный отчёт перечисляет найденные ресурсы, созданные объекты, предупреждения и участки, которые нельзя перенести автоматически.</p>
+          <div class="report-visual" aria-hidden="true">
+            <div class="report-sheet">
+              <div class="report-title"><i></i> IMPORT REPORT</div>
+              <div class="report-row"><i></i> Scenes generated <strong>✓</strong></div>
+              <div class="report-row"><i></i> Textures staged <strong>✓</strong></div>
+              <div class="report-row warn"><i></i> Manual work <strong>!</strong></div>
+              <div class="report-progress"><i></i></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="workflow section-wrap" id="workflow">
+      <div class="workflow-heading">
+        <div class="section-kicker">02 / WORKFLOW</div>
+        <h2>От проекта до <b>Roblox Studio.</b></h2>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <span class="step-num">STEP 01</span>
+          <div class="step-icon">▣</div>
+          <h3>Подготовь Godot ZIP</h3>
+          <p>Упакуй полный проект с project.godot, читаемыми .tscn-сценами и необходимыми ресурсами.</p>
+        </article>
+        <article class="step">
+          <span class="step-num">STEP 02</span>
+          <div class="step-icon">⇄</div>
+          <h3>Запусти конвертацию</h3>
+          <p>Выбери архив в GodotBridge. Программа проверит проект, создаст файлы и соберёт отчёт о переносе.</p>
+        </article>
+        <article class="step">
+          <span class="step-num">STEP 03</span>
+          <div class="step-icon">◇</div>
+          <h3>Проверь в Roblox Studio</h3>
+          <p>Импортируй RBXMX, перемести ScreenGui в StarterGui, назначь asset ID и адаптируй неподдерживаемые системы.</p>
+        </article>
+      </div>
+      <div class="workflow-note"><span>i</span><p>Для первого запуска прочитай «ПОШАГОВАЯ УСТАНОВКА.txt». В ней описан проверенный способ запуска через контекстное меню Windows (ПКМ), установка Python/Tkinter и подготовка Godot-проекта.</p></div>
+    </section>
+
+    <section class="requirements section-wrap" id="requirements">
+      <div class="requirements-panel">
+        <div>
+          <div class="section-kicker">03 / REQUIREMENTS</div>
+          <h2>Перед началом.</h2>
+          <p>GodotBridge — настольный Python-инструмент для Windows. Отдельный готовый EXE в этом выпуске не поставляется.</p>
+        </div>
+        <div class="requirements-list">
+          <div><span>OPERATING SYSTEM</span><strong>Windows 10 / 11</strong></div>
+          <div><span>PYTHON</span><strong>3.10 или новее</strong></div>
+          <div><span>DESKTOP UI</span><strong>Tkinter (Tcl/Tk)</strong></div>
+          <div><span>INPUT</span><strong>Полный Godot ZIP</strong></div>
+          <div><span>OUTPUT REVIEW</span><strong>Roblox Studio</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <img src="assets/mascot.png" alt="Маскот GodotBridge">
+      <div>
+        <div class="section-kicker">GODOTBRIDGE / VERSION 0.1.4</div>
+        <h2 id="final-title">Построй мост<br>между движками.</h2>
+      </div>
+      <a class="button button-white" href="downloads/GodotBridge_v0.1.4.zip" download>
+        <span class="button-icon">↓</span><span><strong>Скачать v0.1.4</strong><small>Полный архив программы</small></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="#top"><img src="assets/godotbridge-icon.png" alt=""><span>GODOTBRIDGE</span></a>
+    <span>Godot → Roblox • v0.1.4 • Проект находится в разработке</span>
+    <a href="README_RU.txt">О проекте</a>
+  </footer>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
